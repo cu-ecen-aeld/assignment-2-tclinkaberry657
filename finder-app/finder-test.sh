@@ -50,7 +50,7 @@ make clean
 make
 
 for i in $(seq 1 $NUMFILES); do
-  ./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+  ./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
