@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
   const char *writestr = argv[2];
 
   // open the new file to be written to
-  int file = open(writefile, O_WRONLY | O_TRUNC);
+  int file = open(writefile, O_RDWR | O_CREAT, 0664);
   if (file == -1) {
     syslog(LOG_ERR, "Error opening file %s: %s", writefile,
            strerror(errno)); // log error if error opening
